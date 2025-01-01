@@ -1,2 +1,2 @@
-# OBMv2
-For preprint paper OBMv2.
+# PolyFootNet
+For preprint paper PolyFootNet.
