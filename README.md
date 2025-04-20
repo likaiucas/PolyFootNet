@@ -35,13 +35,17 @@ For preprint paper PolyFootNet. The README is on doing....
 Footprints in Off-Nadir Remote Sensing Images</h3>
 
   <p align="center">
-    Extract polygonal building footprints and explore the multi-solutions of the extraction.
+    Extract polygonal building footprints and explore the multiple extraction solutions.
     <br />
     <a href="https://github.com/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/">View Demo</a>
-
+## Paper Contributions
+1. Proposed the first polygonal building footprint extraction network for the off-nadir scenery. 
+2. Explored the multiple solutions to Building Footprint Extraction (BFE) problems. 
+3. Designed a mathematical but interpretable module, Self Offset Attention (SOFA), to improve offset predictions. 
+4. Our method exhabits SOTA performance on three dataset. 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
