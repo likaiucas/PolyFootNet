@@ -41,14 +41,9 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
     <br />
     <br />
     <a href="https://github.com/">View Demo</a>
-
-
-    ·
-    <a href="https://github.com/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/issues">Request Feature</a>
   </p>
 </div>
+
 ## Paper Contributions
 1. Proposed the first polygonal building footprint extraction network for the off-nadir scenery. 
 2. Explored the multiple solutions to Building Footprint Extraction (BFE) problems. 
