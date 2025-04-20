@@ -63,8 +63,8 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
 [issues-url]: https://github.com/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: LICENSE
-[PolyFootNet-screenshot]: images/model2.png
-[SOFA-screenshot]: images/ROAM.png
+[PolyFootNet-screenshot]: icons/PolyFootNet.png
+[SOFA-screenshot]: icons/SOFA.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
