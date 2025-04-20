@@ -36,11 +36,6 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
 
   <p align="center">
     Extract polygonal building footprints and explore the multiple extraction solutions.
-    <br />
-    <a href="https://github.com/"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/">View Demo</a>
   </p>
 </div>
 
@@ -68,8 +63,8 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
 [issues-url]: https://github.com/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: LICENSE
-[product-screenshot]: images/model2.png
-[ROAM-screenshot]: images/ROAM.png
+[PolyFootNet-screenshot]: images/model2.png
+[SOFA-screenshot]: images/ROAM.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
