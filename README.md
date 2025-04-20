@@ -40,7 +40,7 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
 </div>
 
 ## 1. Paper Contributions
-1. Proposed the first polygonal building footprint extraction network for the off-nadir scenery. 
+1. Proposed the first polygonal building footprint extraction (BFE) network for the off-nadir scenery. 
 2. Explored the multiple solutions to Building Footprint Extraction (BFE) problems. 
 3. Designed a mathematical but interpretable module, Self Offset Attention (SOFA), to improve offset predictions. 
 4. Our method exhibits SOTA performance on three datasets. 
@@ -52,7 +52,10 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
 
 ## 2. Architectural Insights & Design Rationale
 The figures illustrate the structure of PolyFootNet and SOFA. 
-### 2.1 How we degsin the SOFA?
+### 2.1 How do we design the SOFA?
+The idea of designing SOFA originated from two clues: one is from an open course of [Dr. Mu Li](https://scholar.google.com.hk/citations?user=Z_WrhK8AAAAJ&hl=zh-CN&oi=ao), another is our prior knowledge of predicting building offsets. 
+Dr. Mu Li concludes that _the nature of attention layers is a special kind of pooling layer_. Coincidentally, in the BFE problem, almost all models predict more accurate directions for taller buildings than shorter ones in the same image. 
+This hints to us that, based on mathematical reasoning, we can design a module that can help the shorter buildings predict offsets by pooling knowledge from those longer ones. 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
