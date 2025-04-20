@@ -96,10 +96,33 @@ Two complementary considerations motivate our investigation.
 
 In short, studying multi‑solutions provides both a pragmatic route to higher accuracy and a unifying framework for disparate remote‑sensing datasets.
 
-## Installation
+## 3. Installation
 Please follow the instructions of [OBM](https://github.com/likaiucas/OBM) and [BONAI](https://github.com/jwwangchn/BONAI). 
 
-## To use PolyFootNet predicting offsets for a given building roof.
+## 4. To Use
+
+## 5. Citing
+```
+@ARTICLE{li2023obm,
+  author={Li, Kai and Deng, Yupeng and Kong, Yunlong and Liu, Diyou and Chen, Jingbo and Meng, Yu and Ma, Junxian and Wang, Chenhao},
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={Prompt-Driven Building Footprint Extraction in Aerial Images With Offset-Building Model}, 
+  year={2024},
+  volume={62},
+  number={},
+  pages={1-15},
+  keywords={Buildings;Prediction algorithms;Production;Data models;Data mining;Remote sensing;Instance segmentation;Feature extraction;Training;Three-dimensional displays;Building footprint extraction (BFE);nonmaximum suppression (NMS);roof segmentation;roof-to-footprint offset extraction;segment anything model (SAM)},
+  doi={10.1109/TGRS.2024.3487652}}
+```
+
+```
+@article{li2024extracting,
+  title={Extracting polygonal footprints in off-nadir images with Segment Anything Model},
+  author={Li, Kai and Deng, Yupeng and Chen, Jingbo and Meng, Yu and Xi, Zhihao and Ma, Junxian and Wang, Chenhao and Zhao, Xiangyu},
+  journal={arXiv preprint arXiv:2408.08645},
+  year={2024}
+}
+```
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
