@@ -78,7 +78,7 @@ SOFA leverages these insights to let *reliable long offsets* refine *less‑reli
 | Lecture video (Bilibili) | <https://www.bilibili.com/video/BV1264y1i7R1> |
 
 
-### 2.2 Why Explore Multiple Formulations (“Multi‑Solutions”) of the BFE Task?
+### 2.2 Why Explore Multiple Formulations (“Multi‑Solutions”) of the BFE Task?
 
 Two complementary considerations motivate our investigation.
 
