@@ -79,7 +79,10 @@ SOFA leverages these insights to let *reliable long offsets* refine *less‑reli
 
 
 ### 2.2 Why Explore Multiple Formulations (“Multi‑Solutions”) of the BFE Task?
-<img src="icons/multi" alt="intro" width="256" height="256">
+<div align="center">
+  <img src="icons/multi.png" alt="intro" width="512" height="256">
+</div>
+In this figure, (a) is a commonly used solution for BFE. (b) and (c) is that we studied new cases, and (d) is what PolyFootNet can do. 
 Two complementary considerations motivate our investigation.
 
 1. **Empirical evidence from pilot studies**  
