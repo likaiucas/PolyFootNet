@@ -28,7 +28,7 @@ For preprint paper PolyFootNet. The README is on doing....
 <br />
 <div align="center">
   <a href="https://github.com">
-    <img src="images/logo2.png" alt="Logo" width="256" height="256">
+    <img src="icons/icon_polyfootnet.png" alt="Logo" width="256" height="256">
   </a>
 
   <h3 align="center">PolyFootNet: Extracting Polygonal Building
