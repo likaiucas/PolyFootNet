@@ -50,6 +50,9 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
 | :---: | :---: |
 | (a) PolyFootNet| (b) SOFA |
 
+## Architectural Insights & Design Rationale
+The figures illustrate the structure of PolyFootNet and SOFA. 
+### How we degsin the SOFA?
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
