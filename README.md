@@ -55,7 +55,9 @@ The figures illustrate the structure of PolyFootNet and SOFA.
 ### 2.1 How do we design the SOFA?
 The idea of designing SOFA originated from two clues: one is from an open course of [Dr. Mu Li](https://scholar.google.com.hk/citations?user=Z_WrhK8AAAAJ&hl=zh-CN&oi=ao), another is our prior knowledge of predicting building offsets. 
 Dr. Mu Li concludes that _the nature of attention layers is a special kind of pooling layer_. Coincidentally, in the BFE problem, almost all models predict more accurate directions for taller buildings than shorter ones in the same image. 
-This hints to us that, based on mathematical reasoning, we can design a module that can help the shorter buildings predict offsets by pooling knowledge from those longer ones. 
+This hints to us that, based on mathematical reasoning, we can design a module that can help the shorter buildings predict offsets by pooling knowledge from those longer ones. In other words, helping the prediction process concentrate more on the longer offsets. In short, the designed SOFA pools the knowledge by computing length similarities between different offsets. Then, this similarity will be transformed into a kind of weighted sum of their directions, and the offsets will finally be determined. 
+
+If readers want to going deeper with the theory of kernal regression and pooling, the related textbook chapter written by Dr. Mu Li can be found here in both English and Chinese.  
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
