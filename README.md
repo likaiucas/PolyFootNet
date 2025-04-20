@@ -64,20 +64,7 @@ The conception of **SOFA** is driven by two complementary observations:
 2. **Empirical behaviour in BFE tasks**  
    In Building Footprint Extraction (BFE) models, roof‑to‑footprint offsets for **taller buildings** (i.e. longer vectors) consistently exhibit lower angular error than those for **shorter buildings** in the same image.
 
----
-
-#### Translating theory into practice
-
-SOFA leverages these insights to let *reliable long offsets* refine *less‑reliable short offsets*:
-
-| Step | Operation | Purpose |
-|------|-----------|---------|
-| 1 | **Similarity measure** between offsets using length differences as the kernel argument | Encodes the intuition that similar‑length offsets share directional cues |
-| 2 | **Normalisation** of similarities to obtain attention weights (see Eq. 6) | Produces a valid probability distribution |
-| 3 | **Weighted aggregation** of angular components (see Eq. 7) | Yields corrected directions for every offset |
-
-This lightweight, plug‑and‑play block consistently reduces angular error for short offsets while preserving the accuracy of long ones.
-
+SOFA leverages these insights to let *reliable long offsets* refine *less‑reliable short offsets*. (or say: pooling knowledges from longer offsets or concentrate more on them)
 ---
 
 #### Further Reading
@@ -90,7 +77,21 @@ This lightweight, plug‑and‑play block consistently reduces angular error for
 | Lecture video (Bilibili) | <https://www.bilibili.com/video/BV1264y1i7R1> |
 
 
-### 2.2 Why did we study the multi-solutions of BFE?
+### 2.2 Why Explore Multiple Formulations (“Multi‑Solutions”) of the BFE Task?
+
+Two complementary considerations motivate our investigation.
+
+1. **Empirical evidence from pilot studies**  
+   Preliminary experiments contrasted masks for **entire buildings** versus **partial‑roof regions**. Intersection‑over‑Union (IoU) scores were consistently *higher* for full‑building masks. Visual inspection suggests that models struggle to distinguish the roof–facade seam, whereas the building–ground boundary is far more salient. This observation encouraged us to search for *alternative factorizations*—representations that bypass the ambiguous roof edge yet still recover precise footprints.
+
+2. **Heterogeneous labelling conventions across public datasets**  
+   A decade of BFE research has produced multiple benchmarks with dissimilar annotations. For example, **BANDON** supplies only roof and facade polygons, omitting footprints altogether. By developing mathematically consistent “multi‑solution” formulations, we can **project heterogeneous labels into a common space**, thereby  
+   * • unlocking legacy datasets that would otherwise be unusable,  
+   * • constructing unified training pipelines, and  
+   * • improving robustness and generalisation through greater data diversity.
+
+In short, studying multi‑solutions provides both a pragmatic route to higher accuracy and a unifying framework for disparate remote‑sensing datasets.
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
