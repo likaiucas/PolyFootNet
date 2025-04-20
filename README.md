@@ -116,7 +116,7 @@ Please follow the instructions of [OBM](https://github.com/likaiucas/OBM) and [B
 ```
 
 ```
-@article{li2024extracting,
+@article{li2024polyfootnet,
   title={Extracting polygonal footprints in off-nadir images with Segment Anything Model},
   author={Li, Kai and Deng, Yupeng and Chen, Jingbo and Meng, Yu and Xi, Zhihao and Ma, Junxian and Wang, Chenhao and Zhao, Xiangyu},
   journal={arXiv preprint arXiv:2408.08645},
