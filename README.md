@@ -99,6 +99,8 @@ In short, studying multi‑solutions provides both a pragmatic route to higher a
 ## Installation
 Please follow the instructions of [OBM](https://github.com/likaiucas/OBM) and [BONAI](https://github.com/jwwangchn/BONAI). 
 
+## To use PolyFootNet predicting offsets for a given building roof.
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
