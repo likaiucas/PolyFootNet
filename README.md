@@ -41,11 +41,26 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
     <br />
     <br />
     <a href="https://github.com/">View Demo</a>
+
+
+    ·
+    <a href="https://github.com/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/issues">Request Feature</a>
+  </p>
+</div>
 ## Paper Contributions
 1. Proposed the first polygonal building footprint extraction network for the off-nadir scenery. 
 2. Explored the multiple solutions to Building Footprint Extraction (BFE) problems. 
 3. Designed a mathematical but interpretable module, Self Offset Attention (SOFA), to improve offset predictions. 
-4. Our method exhabits SOTA performance on three dataset. 
+4. Our method exhibits SOTA performance on three datasets. 
+
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+| ![Product Name Screen Shot][PolyFootNet-screenshot] | ![Product Name Screen Shot][SOFA-screenshot] |
+| :---: | :---: |
+| (a) PolyFootNet| (b) SOFA |
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
@@ -87,9 +102,3 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
 [BONAI.git]: https://github.com/jwwangchn/BONAI
 [BONAI]: https://github.com/jwwangchn/BONAI
 [SAM]: https://github.com/facebookresearch/segment-anything
-    ·
-    <a href="https://github.com/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/issues">Request Feature</a>
-  </p>
-</div>
