@@ -1,5 +1,5 @@
 # PolyFootNet
-For preprint paper PolyFootNet. The README is on doing....
+For preprint paper PolyFootNet. 
 <a name="readme-top"></a>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -90,12 +90,14 @@ Two complementary considerations motivate our investigation.
 
 2. **Heterogeneous labelling conventions across public datasets**  
    A decade of BFE research has produced multiple benchmarks with dissimilar annotations. For example, **BANDON** supplies only roof and facade polygons, omitting footprints altogether. By developing mathematically consistent “multi‑solution” formulations, we can **project heterogeneous labels into a common space**, thereby  
-   * • unlocking legacy datasets that would otherwise be unusable,  
-   * • constructing unified training pipelines, and  
-   * • improving robustness and generalisation through greater data diversity.
+   * unlocking legacy datasets that would otherwise be unusable,  
+   * constructing unified training pipelines, and  
+   * improving robustness and generalisation through greater data diversity.
 
 In short, studying multi‑solutions provides both a pragmatic route to higher accuracy and a unifying framework for disparate remote‑sensing datasets.
 
+## Installation
+Please follow the instruction of OBM and BONAI. 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
