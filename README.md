@@ -52,12 +52,45 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
 
 ## 2. Architectural Insights & Design Rationale
 The figures illustrate the structure of PolyFootNet and SOFA. 
-### 2.1 How do we design the SOFA?
-The idea of designing SOFA originated from two clues: one is from an open course of [Dr. Mu Li](https://scholar.google.com.hk/citations?user=Z_WrhK8AAAAJ&hl=zh-CN&oi=ao), another is our prior knowledge of predicting building offsets. 
-Dr. Mu Li concludes that _the nature of attention layers is a special kind of pooling layer_. Coincidentally, in the BFE problem, almost all models predict more accurate directions for taller buildings than shorter ones in the same image. 
-This hints to us that, based on mathematical reasoning, we can design a module that can help the shorter buildings predict offsets by pooling knowledge from those longer ones. In other words, helping the prediction process concentrate more on the longer offsets. In short, the designed SOFA pools the knowledge by computing length similarities between different offsets. Then, this similarity will be transformed into a kind of weighted sum of their directions, and the offsets will finally be determined. 
 
-If readers want to go deeper with the theory of kernel regression and pooling, the related textbook chapter written by Dr. Mu Li can be found here in both [English](https://d2l.ai/chapter_attention-mechanisms-and-transformers/attention-pooling.html#attention-pooling-via-nadarayawatson-regression) and [Chinese](https://zh.d2l.ai/chapter_attention-mechanisms/nadaraya-waston.html), and also the related videos where he said that opinion on [Youtube](https://www.youtube.com/watch?v=EUFhCYuD3gk) and [Bilibili](https://www.bilibili.com/video/BV1264y1i7R1/?vd_source=208c8aba777d744dd9395efd0baf8f36). 
+### 2.1 Design Motivation of the Self‑Offset Attention (SOFA) Module
+
+The conception of **SOFA** is driven by two complementary observations:
+
+1. **Attention as learnable pooling**  
+   *Dr. Mu Li* formalises attention layers as kernel‑based pooling—essentially a data‑adaptive weighted average grounded in Nadaraya–Watson regression.  
+   This interpretation frames attention not as a novel operator, but as a principled pooling mechanism.
+
+2. **Empirical behaviour in BFE tasks**  
+   In Building Footprint Extraction (BFE) models, roof‑to‑footprint offsets for **taller buildings** (i.e. longer vectors) consistently exhibit lower angular error than those for **shorter buildings** in the same image.
+
+---
+
+#### Translating theory into practice
+
+SOFA leverages these insights to let *reliable long offsets* refine *less‑reliable short offsets*:
+
+| Step | Operation | Purpose |
+|------|-----------|---------|
+| 1 | **Similarity measure** between offsets using length differences as the kernel argument | Encodes the intuition that similar‑length offsets share directional cues |
+| 2 | **Normalisation** of similarities to obtain attention weights (see Eq. 6) | Produces a valid probability distribution |
+| 3 | **Weighted aggregation** of angular components (see Eq. 7) | Yields corrected directions for every offset |
+
+This lightweight, plug‑and‑play block consistently reduces angular error for short offsets while preserving the accuracy of long ones.
+
+---
+
+#### Further Reading
+
+| Resource | Link |
+|----------|------|
+| *Attention Pooling* (English, D2L) | <https://d2l.ai/chapter_attention-mechanisms-and-transformers/attention-pooling.html> |
+| *注意力池化* (中文, D2L) | <https://zh.d2l.ai/chapter_attention-mechanisms/nadaraya-waston.html> |
+| Lecture video (YouTube) | <https://www.youtube.com/watch?v=EUFhCYuD3gk> |
+| Lecture video (Bilibili) | <https://www.bilibili.com/video/BV1264y1i7R1> |
+
+
+### 2.2 Why did we study the multi-solutions of BFE?
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
