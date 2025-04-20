@@ -64,7 +64,7 @@ The conception of **SOFA** is driven by two complementary observations:
 2. **Empirical behaviour in BFE tasks**  
    In Building Footprint Extraction (BFE) models, roof‑to‑footprint offsets for **taller buildings** (i.e. longer vectors) consistently exhibit lower angular error than those for **shorter buildings** in the same image.
 
-SOFA leverages these insights to let *reliable long offsets* refine *less‑reliable short offsets*. (or say: pooling knowledges from longer offsets or concentrate more on them)
+  SOFA leverages these insights to let *reliable long offsets* refine *less‑reliable short offsets*. (or say: pooling knowledges from longer offsets or concentrate more on them)
 ---
 
 #### Further Reading
