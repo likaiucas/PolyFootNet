@@ -97,7 +97,7 @@ Two complementary considerations motivate our investigation.
 In short, studying multi‑solutions provides both a pragmatic route to higher accuracy and a unifying framework for disparate remote‑sensing datasets.
 
 ## Installation
-Please follow the instruction of OBM and BONAI. 
+Please follow the instructions of [OBM](https://github.com/likaiucas/OBM) and [BONAI](https://github.com/jwwangchn/BONAI). 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
