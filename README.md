@@ -135,7 +135,7 @@ Please follow the instructions of [OBM](https://github.com/likaiucas/OBM) and [B
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [issues-url]: https://github.com/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: LICENSE
+[license-url]: ./LICENSE
 [PolyFootNet-screenshot]: icons/PolyFootNet.png
 [SOFA-screenshot]: icons/SOFA.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
