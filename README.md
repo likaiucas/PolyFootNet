@@ -39,6 +39,13 @@ Footprints in Off-Nadir Remote Sensing Images</h3>
   </p>
 </div>
 
+## 0. News
+I am currently preparing for my PhD Qualification Exam (QE) at City University of Hong Kong, which runs until 5 August 2025. After the exam, I will fly directly to IGARSS 2025 in Brisbane, Australia, supported by an IGARSS 2025 travel grant. I will give two oral presentations on OBM, the precursor to PolyFootNet, and I warmly invite you all to attend and ask questions. Once IGARSS and a short trip around Australia are over, I will finalize and release the open‑source code and model weights for PolyFootNet. See you in IGARSS 2025. 
+
+Time 1: 13:15 - 14:30 6th Aug, 2025. Plaza: Room P5, 3MT Final Round. (Come and Vote!)
+Time 2: 10:30 - 10:45 8th Aug, 2025. Mezzanine: Room M2. 
+
+
 ## 1. Paper Contributions
 1. Proposed the first polygonal building footprint extraction (BFE) network for the off-nadir scenery. 
 2. Explored the multiple solutions to Building Footprint Extraction (BFE) problems. 
