@@ -136,7 +136,7 @@ class MaskDecoder_seg(nn.Module):
 ### Step 3: Turn on the `sofa_vector` in YOUR/CONFIG.py as:
 model = dict(
      mask_decoder = dict(
-        type = 'MaskDecoder_seg_poly',
+        type = 'MaskDecoder_seg',
         sofa_head=dict(
                 type='SOFA_vector',
                 trainable=False),)
