@@ -76,7 +76,7 @@ class MaskDecoder_seg(nn.Module):
         transformer_dim: int,
         transformer: nn.Module,
         num_multimask_outputs: int = 3,
-        sofa_head= None,
+        sofa_head= None, ##### add this line in setting
         loss_masks=dict(
             type='SAMHQLoss',),
         loss_offset=dict(type='SmoothL1Loss', loss_weight=8*2.0),
