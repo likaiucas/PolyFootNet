@@ -47,6 +47,10 @@ Time 1: 13:15 - 14:30 6th Aug, 2025. Plaza: Room P5, 3MT Final Round. (Come and 
 Time 2: 10:30 - 10:45 8th Aug, 2025. Mezzanine: Room M2. 
 
 
+## 0. PolyFootNet Model Weight
+[OneDrive](https://portland-my.sharepoint.com/:u:/g/personal/kaili37-c_my_cityu_edu_hk/EcHBYFFQClRNtxnTvLVUX1sBk9c-cmiqGC2BE1qckCaw9w?e=yWWf6O)
+BaiduDisk
+
 ## 1. Paper Contributions
 1. Proposed the first polygonal building footprint extraction (BFE) network for the off-nadir scenery. 
 2. Explored the multiple solutions to Building Footprint Extraction (BFE) problems. 
