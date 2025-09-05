@@ -49,7 +49,100 @@ Time 2: 10:30 - 10:45 8th Aug, 2025. Mezzanine: Room M2.
 
 ### 0.1. PolyFootNet Model Weight
 [OneDrive](https://portland-my.sharepoint.com/:u:/g/personal/kaili37-c_my_cityu_edu_hk/EcHBYFFQClRNtxnTvLVUX1sBk9c-cmiqGC2BE1qckCaw9w?e=yWWf6O)
-BaiduDisk
+[BaiduDisk](https://pan.baidu.com/s/1JyP5GDpDYHmpKyL6masQBg?pwd=s8ym)
+
+### 0.2. Note for inference
+For your convenience, we have now open-sourced the PolyFootNet model. You can directly use the inference configuration file and code from OBM to perform inference tasks. Please note that you will need to modify the `data` configuration as shown below to help you complete the task and evaluate the correction effect of PolyFootNet. 
+
+Although the model weights include those for **keypoint prediction**, the OBM code cannot generate the polygons due to some code missing, as this algorithm is currently involved in commercial use. If you wish to use functions such as keypoint prediction, please contact me through my personal homepage and state your purpose.
+
+```
+data = dict(
+    test=dict(
+        bbox_type='roof',
+        mask_type='roof',
+        )
+)
+```
+
+If you want to use our SOFA_vector in various models, you can manually register SOFA in OBM and then call it in your model, and call it in `forward_test` using the following code:
+```
+### Step 1: Replace and add codes in OBM/mmdet/models/roi_heads/twoway_mask_offset_decoder.py as follows:
+@HEADS.register_module()
+class MaskDecoder_seg(nn.Module):
+    def __init__(
+        self,
+        *,
+        transformer_dim: int,
+        transformer: nn.Module,
+        num_multimask_outputs: int = 3,
+        sofa_head= None,
+        loss_masks=dict(
+            type='SAMHQLoss',),
+        loss_offset=dict(type='SmoothL1Loss', loss_weight=8*2.0),
+        offset_coder=dict(
+            type='DeltaXYOffsetCoder_Transformer',
+            image_size = (200,200),
+            target_means=[0.0, 0.0],
+            target_stds=[0.5, 0.5]),
+        iou_head_depth: int = 3,
+        iou_head_hidden_dim: int = 256,
+        offset_aug = None,
+        hidden_dim = 256,
+        # sofa_head=None,
+    ) :
+########### add following code #######
+        if sofa_head is not None:
+            self.sofa_head_base = build_head(sofa_head)
+        else:
+            self.sofa_head_base = None
+
+     def forward_test(
+                self,
+                image_embeddings,
+                image_pe,
+                sparse_prompt_embeddings,
+                dense_prompt_embeddings,
+    ):
+        masks, prob, offset, aug_offsets = self.predict_offset_masks(image_embeddings, image_pe, sparse_prompt_embeddings, dense_prompt_embeddings,)
+        if self.sofa_head_base is not None:
+            aug_offsets.append(offset)
+            out_offsets = self.sofa_head_base(torch.cat(aug_offsets,0))
+            out_offsets = out_offsets.reshape(self.offset_aug_length+1, -1, 2)
+            aug_offsets = [out_offsets[i] for i in range(self.offset_aug_length)]
+            offset = out_offsets[-1]
+        offset = self.offset_coder.decode(offset)  
+        
+        if self.offset_aug_length:
+            offset_indicator = torch.norm(offset, dim=1)>10
+            aug_offsets = [self.offset_aug_coder[i].decode(aug_offsets[i]) for i in range(self.offset_aug_length)]
+            # aug_offsets.append(offset)
+            # 按照offset的大小排序
+            selector = [coder.image_size[0]>self.offset_coder.image_size[0] for coder in self.offset_aug_coder]
+            # offset[offset_indicator] = (sum(aug_offsets[selector.index(True)][offset_indicator])+offset[offset_indicator])/(1+sum(selector))
+            # offset[~offset_indicator] = (sum(aug_offsets[selector.index(False)][~offset_indicator])+offset[~offset_indicator])/(1+sum(selector.index(False)))
+            for idx, sl in enumerate(selector):
+                if sl:
+                    offset[offset_indicator] += aug_offsets[idx][offset_indicator]
+                else:
+                    offset[~offset_indicator] += aug_offsets[idx][~offset_indicator]
+            offset[offset_indicator] = offset[offset_indicator]/(1+sum(selector))
+            offset[~offset_indicator] = offset[~offset_indicator]/(1+len(selector)-sum(selector))  
+            
+        return offset, prob, masks
+
+### Step 2: add the sofa_head.py to OBM/mmdet/models/dense_heads/sofa_head.py, and include the sofa in OBM/mmdet/models/dense_heads/__init__.py
+
+### Step 3: Turn on the `sofa_vector` in YOUR/CONFIG.py as:
+model = dict(
+     mask_decoder = dict(
+        type = 'MaskDecoder_seg_poly',
+        sofa_head=dict(
+                type='SOFA_vector',
+                trainable=True),)
+)
+```
+
 
 ## 1. Paper Contributions
 1. Proposed the first polygonal building footprint extraction (BFE) network for the off-nadir scenery. 
