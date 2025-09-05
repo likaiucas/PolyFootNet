@@ -139,7 +139,7 @@ model = dict(
         type = 'MaskDecoder_seg_poly',
         sofa_head=dict(
                 type='SOFA_vector',
-                trainable=True),)
+                trainable=False),)
 )
 ```
 
